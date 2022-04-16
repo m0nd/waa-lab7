@@ -6,9 +6,9 @@ import PostDetails from "../../PostDetails/PostDetails";
 const Dashboard = () => {
     const [posts, setPosts]  = useState(
         [
-            {id: 111, title: 'Happiness', author: 'John'},
-            {id: 112, title: 'MIU', author: 'Dean'},
-            {id: 113, title: 'Enjoy Life', author: 'Jasmine'}
+            {id: 111, title: 'Happiness', author: 'John', content: 'Happiness is always inside you'},
+            {id: 112, title: 'MIU', author: 'Dean', content: 'MIU is an interesting university'},
+            {id: 113, title: 'Enjoy Life', author: 'Jasmine', content: 'Enjoy life cause you only get one'}
         ]
     );
 
