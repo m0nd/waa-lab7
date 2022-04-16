@@ -1,6 +1,7 @@
 import Posts from "../Posts/Posts";
 import { useState } from 'react';
 import './Dashboard.css'
+import PostDetails from "../../PostDetails/PostDetails";
 
 const Dashboard = () => {
     const [posts, setPosts]  = useState(
@@ -11,6 +12,8 @@ const Dashboard = () => {
         ]
     );
 
+    const [selectedPost, setSelectedPost] = useState(null);
+
     const updateTitle = (event) => {
         event.preventDefault();
         const postsCopy = [...posts];
@@ -18,11 +21,12 @@ const Dashboard = () => {
         setPosts(postsCopy);
     }
 
+
     return (
         <div>
             <h2>Dashboard</h2>
             <div className="dash">
-                <Posts posts={posts} />
+                <Posts posts={posts} setSelectedPost={setSelectedPost} />
             </div>
             <div>
                 <h3>Update first component's title</h3>
@@ -31,6 +35,8 @@ const Dashboard = () => {
                     <button type="submit">Update Title</button>
                 </form>
             </div>
+            { selectedPost !== null && <PostDetails selectedPost={selectedPost} /> }
+            
         </div>
     )
 }
